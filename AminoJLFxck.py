@@ -8,7 +8,6 @@ print("""Script by Lil Zevi
 Github : https://github.com/LilZevi""")
 print(pyfiglet.figlet_format("aminojlfxck", font="graffiti"))
 client = AminoLab.Client()
-i = 0
 email = input("Email >> ")
 password = input("Password >> ")
 client.auth(email=email, password=password)
