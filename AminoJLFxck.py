@@ -32,7 +32,7 @@ def main_process():
 	while True:
 		print("Joining and Leaving....")
 		with concurrent.futures.ThreadPoolExecutor(max_workers=150) as executor:
-			_ = [executor.submit(join_and_leave) for _ in range(1500)]
+			_ = [executor.submit(join_and_leave) for _ in range(100000)]
 
 
 main_process()
