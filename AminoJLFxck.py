@@ -20,19 +20,20 @@ for z, title in enumerate(chats.title, 1):
     print(f"{z}.{title}")
 thread_Id = chats.thread_Id[int(input("Select The Chat >> ")) - 1]
 
+
 def join_and_leave():
     try:
         client.leave_thread(ndc_Id=ndc_Id, thread_Id=thread_Id)
         client.join_thread(ndc_Id=ndc_Id, thread_Id=thread_Id)
-    except:
-    	return
+    except BaseException:
+        return
 
 
 def main_process():
-	while True:
-		print("Joining and Leaving....")
-		with concurrent.futures.ThreadPoolExecutor(max_workers=150) as executor:
-			_ = [executor.submit(join_and_leave) for _ in range(100000)]
+    while True:
+        print("Joining and Leaving....")
+        with concurrent.futures.ThreadPoolExecutor(max_workers=150) as executor:
+            _ = [executor.submit(join_and_leave) for _ in range(100000)]
 
 
 main_process()
