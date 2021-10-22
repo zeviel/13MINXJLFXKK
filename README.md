@@ -9,7 +9,7 @@ AminoJLFxck Join &amp; Leave Spam Bot For Amino
 - pip install colored
 - pip install pyfiglet
 - pip install AminoLab
-- git clone https://github.com/LilZevi/AminoJLFxck
+- git clone https://github.com/deluvsushi/AminoJLFxck
 - !Для запуска/For starting!
 - cd AminoJLFxck
 - python AminoJLFxck.py
