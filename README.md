@@ -2,14 +2,15 @@
 AminoJLFxck Join &amp; Leave Spam Bot For Amino
 
 
-# Termux
+## Termux
+```shell
 - apt update -y
 - apt upgrade -y
 - pkg install python
+- pip install amino.py
 - pip install colored
 - pip install pyfiglet
-- pip install AminoLab
 - git clone https://github.com/deluvsushi/AminoJLFxck
-- !Для запуска/For starting!
 - cd AminoJLFxck
 - python AminoJLFxck.py
+```
