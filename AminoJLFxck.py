@@ -1,38 +1,41 @@
-import AminoLab
-import pyfiglet
-import concurrent.futures
-from colored import fore, back, style, attr
+import amino
+from pyfiglet import figlet_format
+from colored import fore, style, attr
+from concurrent.futures import ThreadPoolExecutor
 attr(0)
-print(fore.LIGHT_STEEL_BLUE + style.BOLD)
-print("""Script by deluvsushi
-Github : https://github.com/deluvsushi""")
-print(pyfiglet.figlet_format("aminojlfxck", font="graffiti"))
-client = AminoLab.Client()
-email = input("Email >> ")
-password = input("Password >> ")
-client.auth(email=email, password=password)
-clients = client.my_communities()
+print(
+    f"""{fore.LIGHT_STEEL_BLUE + style.BOLD}
+Script by deluvsushi
+Github : https://github.com/deluvsushi"""
+)
+print(figlet_format("aminojlfxck", font="graffiti"))
+client = amino.Client()
+email = input("-- Email::: ")
+password = input("-- Password::: ")
+client.login(email=email, password=password)
+clients = client.sub_clients(start=0, size=100)
 for x, name in enumerate(clients.name, 1):
     print(f"{x}.{name}")
-ndc_Id = clients.ndc_Id[int(input("Select the community >> ")) - 1]
-chats = client.my_chat_threads(ndc_Id=ndc_Id, size=100)
+com_id = clients.comId[int(input("-- Select the community::: ")) - 1]
+sub_client = amino.SubClient(comId=com_id, profile=client.profile)
+chats = sub_client.get_chat_threads(start=0, size=100)
 for z, title in enumerate(chats.title, 1):
     print(f"{z}.{title}")
-thread_Id = chats.thread_Id[int(input("Select The Chat >> ")) - 1]
+chat_id = chats.chatId[int(input("-- Select the chat::: ")) - 1]
 
 
 def join_and_leave():
     try:
-        client.leave_thread(ndc_Id=ndc_Id, thread_Id=thread_Id)
-        client.join_thread(ndc_Id=ndc_Id, thread_Id=thread_Id)
+        sub_client.leave_chat(chatId=chat_id)
+        sub_client.join_chat(chatId=chat_id)
     except BaseException:
         return
 
 
 def main_process():
     while True:
-        print("Joining and Leaving....")
-        with concurrent.futures.ThreadPoolExecutor(max_workers=150) as executor:
+        print("-- Joining and Leaving...")
+        with ThreadPoolExecutor(max_workers=100) as executor:
             _ = [executor.submit(join_and_leave) for _ in range(100000)]
 
 
