@@ -1,5 +1,5 @@
-# AminoJLFxck
-AminoJLFxck Join &amp; Leave Spam Bot For Amino
+# 13MINXJLFXKK
+Join and leave spam bot for amino
 
 
 ## Termux
@@ -10,7 +10,7 @@ AminoJLFxck Join &amp; Leave Spam Bot For Amino
 - pip install amino.py
 - pip install colored
 - pip install pyfiglet
-- git clone https://github.com/deluvsushi/AminoJLFxck
-- cd AminoJLFxck
-- python AminoJLFxck.py
+- git clone https://github.com/deluvsushi/13MINXJLFXKK
+- cd 13MINXJLFXKK
+- python 13MINXJLFXKK.py
 ```
