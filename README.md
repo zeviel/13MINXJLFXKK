@@ -10,7 +10,7 @@ Join and leave spam bot for amino
 - pip install amino.py
 - pip install colored
 - pip install pyfiglet
-- git clone https://github.com/deluvsushi/13MINXJLFXKK
+- git clone https://github.com/zeviel/13MINXJLFXKK
 - cd 13MINXJLFXKK
 - python 13MINXJLFXKK.py
 ```
